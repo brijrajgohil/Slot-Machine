@@ -3,7 +3,7 @@
 //  SlotMachine
 //
 //  Created by Beetu on 4/19/15.
-//  Copyright (c) 2015 Luke. All rights reserved.
+//  Copyright (c) 2015 Brijrajsinh Gohil. All rights reserved.
 //
 
 import UIKit
@@ -109,7 +109,19 @@ class ViewController: UIViewController {
         self.betLabel.font = UIFont(name: "Menlo-Bold", size: 16)
         self.betLabel.sizeToFit()
         self.betLabel.center = CGPoint(x: containerView.frame.width * kSixth * 3, y: containerView.frame.height * kThird)
+        self.betLabel.textAlignment = NSTextAlignment.Center
+        self.betLabel.backgroundColor = UIColor.darkGrayColor()
+        containerView.addSubview(self.betLabel)
         
+        self.winnerPaidLabel = UILabel()
+        self.winnerPaidLabel.text = "000000"
+        self.winnerPaidLabel.textColor = UIColor.redColor()
+        self.winnerPaidLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.winnerPaidLabel.sizeToFit()
+        self.winnerPaidLabel.center = CGPoint(x: containerView.frame.width * kSixth * 5, y: containerView.frame.height * kThird)
+        self.winnerPaidLabel.textAlignment = NSTextAlignment.Center
+        self.winnerPaidLabel.backgroundColor = UIColor.darkGrayColor()
+        containerView.addSubview(self.winnerPaidLabel)
         
     }
 }
