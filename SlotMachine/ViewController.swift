@@ -17,6 +17,15 @@ class ViewController: UIViewController {
     
     var titleLabel: UILabel!
     
+    //Information Labels
+    
+    var creditsLabel: UILabel!
+    var betLabel: UILabel!
+    var winnerPaidLabel: UILabel!
+    var creditsTitleLabel: UILabel!
+    var betTitleLabel: UILabel!
+    var winnerPaidTitleLabel: UILabel!
+    
     let kNumberOfContainers = 3
     let kNumberOfSlots = 3
     
@@ -32,6 +41,7 @@ class ViewController: UIViewController {
         setUpContainerViews()
         setupFirstContainer(self.firstContainer)
         setupSecondContainer(self.secondContainer)
+        setupThirdContainer(self.thirdContainer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +88,29 @@ class ViewController: UIViewController {
                 
             }
         }
+    }
+    
+    func setupThirdContainer(containerView: UIView) {
+        
+        self.creditsLabel = UILabel()
+        self.creditsLabel.text = "000000"
+        self.creditsLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.creditsLabel.textColor = UIColor.redColor()
+        self.creditsLabel.sizeToFit()
+        self.creditsLabel.center = CGPoint(x: containerView.frame.width * kSixth, y: containerView.frame.height * kThird)
+        self.creditsLabel.textAlignment = NSTextAlignment.Center
+        self.creditsLabel.backgroundColor = UIColor.darkGrayColor()
+        containerView.addSubview(self.creditsLabel)
+        
+        
+        self.betLabel = UILabel()
+        self.betLabel.text = "0000"
+        self.betLabel.textColor = UIColor.redColor()
+        self.betLabel.font = UIFont(name: "Menlo-Bold", size: 16)
+        self.betLabel.sizeToFit()
+        self.betLabel.center = CGPoint(x: containerView.frame.width * kSixth * 3, y: containerView.frame.height * kThird)
+        
+        
     }
 }
 
